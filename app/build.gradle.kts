@@ -44,23 +44,23 @@ dependencies {
     implementation ("com.jakewharton.rxbinding4:rxbinding:4.0.0")
 
     // room
-    val room = "2.6.0"
+    val room = "2.5.0"
     annotationProcessor("androidx.room:room-compiler:$room")
     implementation("androidx.room:room-runtime:$room")
     implementation("androidx.room:room-ktx:$room")
     implementation("androidx.room:room-rxjava3:$room")
     implementation("androidx.room:room-paging:$room")
 
-    val viewModelActivity = "1.8.0"
-    val viewModelFragment = "1.6.2"
+    val viewModelActivity = "1.7.1"
+    val viewModelFragment = "1.5.7"
     implementation("androidx.activity:activity-ktx:$viewModelActivity")
     implementation("androidx.fragment:fragment-ktx:$viewModelFragment")
 
-    val lifecycleVersion = "2.6.2"
+    val lifecycleVersion = "2.4.1"
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
 
-    val coroutines = "1.6.4"
+    val coroutines = "1.6.0"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines")
 
@@ -80,9 +80,9 @@ dependencies {
     annotationProcessor("com.github.bumptech.glide:compiler:4.13.2")
 
     // basic
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
+    implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
