@@ -13,7 +13,7 @@ android {
         minSdk = 28
         targetSdk = 33
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -64,7 +64,14 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$archLifecycleVersion")
 
+    val retrofit2 = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofit2")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit2")
 
+    val rxRetrofit = "2.6.2"
+    implementation("com.squareup.retrofit2:adapter-rxjava2:$rxRetrofit")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:$rxRetrofit")
+    implementation("com.squareup.okhttp3:logging-interceptor:3.10.0")
 
     val coroutines = "1.6.0"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines")
@@ -72,6 +79,12 @@ dependencies {
 
     val gson = "2.10.1"
     implementation("com.google.code.gson:gson:$gson")
+
+    val jackson = "2.13.3"
+    implementation("com.fasterxml.jackson.core:jackson-core:$jackson")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:$jackson")
+    implementation("com.fasterxml.jackson.core:jackson-databind:$jackson")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jackson")
 
     val logger = "2.2.0"
     implementation("com.orhanobut:logger:$logger")
