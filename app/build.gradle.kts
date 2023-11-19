@@ -56,9 +56,15 @@ dependencies {
     implementation("androidx.activity:activity-ktx:$viewModelActivity")
     implementation("androidx.fragment:fragment-ktx:$viewModelFragment")
 
-    val lifecycleVersion = "2.4.1"
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+    val navigationVersion = "2.5.0"
+    implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
+
+    val archLifecycleVersion = "2.5.0"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$archLifecycleVersion")
+
+
 
     val coroutines = "1.6.0"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines")
