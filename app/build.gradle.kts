@@ -55,6 +55,7 @@ dependencies {
     val viewModelFragment = "1.5.7"
     implementation("androidx.activity:activity-ktx:$viewModelActivity")
     implementation("androidx.fragment:fragment-ktx:$viewModelFragment")
+    annotationProcessor("com.android.databinding:compiler:3.1.4")
 
     val navigationVersion = "2.5.0"
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
@@ -97,6 +98,12 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:$glide")
     implementation("androidx.work:work-runtime-ktx:2.8.1")
     annotationProcessor("com.github.bumptech.glide:compiler:4.13.2")
+
+    val androidXAnnotations = "1.3.0"
+    implementation("androidx.annotation:annotation:$androidXAnnotations")
+
+    val recyclerViewVersion = "1.2.1"
+    implementation("androidx.recyclerview:recyclerview:$recyclerViewVersion")
 
     // basic
     implementation("androidx.core:core-ktx:1.7.0")
