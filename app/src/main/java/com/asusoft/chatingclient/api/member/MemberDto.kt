@@ -1,11 +1,14 @@
 package com.asusoft.chatingclient.api.member
 
+import com.google.gson.annotations.SerializedName
+
 data class MemberDto(
-    var id: String?,
+    var key: Long,
     var name: String?,
+    var id: String?,
     var pw: String?
 ) {
     override fun toString(): String {
-        return "MemberDto(id=$id, name=$name, pw=$pw)"
+        return "MemberDto(key=$key, name=$name, id=$id, pw=$pw)"
     }
 }

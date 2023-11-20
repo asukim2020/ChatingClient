@@ -1,12 +1,17 @@
 package com.asusoft.chatingclient.viewmodel
 
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.asusoft.chatingclient.api.member.MemberDto
 import com.asusoft.chatingclient.api.member.MemberService
+import com.asusoft.chatingclient.util.TAG
 import com.orhanobut.logger.Logger
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class LoginViewModel(
 
@@ -21,17 +26,19 @@ class LoginViewModel(
     val autoLogin = MutableLiveData<Boolean>(false)
 
     fun login() {
-        // TODO: - click event 가 안들어 온다. 해결할 것
-        Logger.d("click login")
-        val memberDto = MemberDto(null, id.value, pw.value)
+        Logger.t(TAG.LOGIN).d("click login id: ${id.value}, pw: ${pw.value}")
+        val memberDto = MemberDto(-1, "", id.value, pw.value)
         MemberService.login(memberDto)
             .subscribeOn(Schedulers.io())
             .observeOn(Schedulers.io())
             .subscribe({ memberDto ->
-                Logger.d(memberDto)
-                autoLogin.value = !(autoLogin.value as Boolean)
+                Logger.t(TAG.LOGIN).d(memberDto)
+                CoroutineScope(Dispatchers.Main).launch {
+                    autoLogin.value = !(autoLogin.value as Boolean)
+                }
+                Logger.t(TAG.LOGIN).d("success login -> $memberDto")
             }, { thowable ->
-                Logger.d(thowable.localizedMessage)
+                Logger.t(TAG.LOGIN).d("error -> ${thowable.localizedMessage}")
             }, { // complete
 
             }, {  subscription ->
