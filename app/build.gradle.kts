@@ -42,6 +42,7 @@ dependencies {
     implementation ("io.reactivex.rxjava3:rxandroid:3.0.0")
     implementation ("io.reactivex.rxjava3:rxjava:3.0.8")
     implementation ("com.jakewharton.rxbinding4:rxbinding:4.0.0")
+    implementation("io.reactivex.rxjava2:rxandroid:2.0.0-RC1")
 
     // room
     val room = "2.5.0"
@@ -68,10 +69,7 @@ dependencies {
     val retrofit2 = "2.9.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofit2")
     implementation("com.squareup.retrofit2:converter-gson:$retrofit2")
-
-    val rxRetrofit = "2.6.2"
-    implementation("com.squareup.retrofit2:adapter-rxjava2:$rxRetrofit")
-    implementation("com.squareup.retrofit2:adapter-rxjava2:$rxRetrofit")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:$retrofit2")
     implementation("com.squareup.okhttp3:logging-interceptor:3.10.0")
 
     val coroutines = "1.6.0"

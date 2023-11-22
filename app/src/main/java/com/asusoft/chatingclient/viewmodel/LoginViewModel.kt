@@ -8,6 +8,7 @@ import com.asusoft.chatingclient.api.member.MemberDto
 import com.asusoft.chatingclient.api.member.MemberService
 import com.asusoft.chatingclient.util.TAG
 import com.orhanobut.logger.Logger
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -30,12 +31,9 @@ class LoginViewModel(
         val memberDto = MemberDto(-1, "", id.value, pw.value)
         MemberService.login(memberDto)
             .subscribeOn(Schedulers.io())
-            .observeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ memberDto ->
-                Logger.t(TAG.LOGIN).d(memberDto)
-                CoroutineScope(Dispatchers.Main).launch {
-                    autoLogin.value = !(autoLogin.value as Boolean)
-                }
+                autoLogin.value = !(autoLogin.value as Boolean)
                 Logger.t(TAG.LOGIN).d("success login -> $memberDto")
             }, { thowable ->
                 Logger.t(TAG.LOGIN).d("error -> ${thowable.localizedMessage}")
