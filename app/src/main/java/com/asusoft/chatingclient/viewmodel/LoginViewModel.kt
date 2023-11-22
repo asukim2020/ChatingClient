@@ -1,7 +1,5 @@
 package com.asusoft.chatingclient.viewmodel
 
-import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.asusoft.chatingclient.api.member.MemberDto
@@ -10,9 +8,6 @@ import com.asusoft.chatingclient.util.TAG
 import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class LoginViewModel(
 
