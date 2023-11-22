@@ -70,7 +70,9 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofit2")
     implementation("com.squareup.retrofit2:converter-gson:$retrofit2")
     implementation("com.squareup.retrofit2:adapter-rxjava2:$retrofit2")
-    implementation("com.squareup.okhttp3:logging-interceptor:3.10.0")
+
+    val httpLogging = "3.10.0"
+    implementation("com.squareup.okhttp3:logging-interceptor:$httpLogging")
 
     val coroutines = "1.6.0"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines")
@@ -104,7 +106,7 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:$recyclerViewVersion")
 
     // basic
-    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("androidx.core:core-ktx:1.8.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
