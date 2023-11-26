@@ -1,5 +1,6 @@
 package com.asusoft.chatingclient.viewmodel
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.asusoft.chatingclient.api.member.MemberDto
@@ -21,6 +22,7 @@ class LoginViewModel(
     val pw = MutableLiveData<String>(pwString)
     val autoLogin = MutableLiveData<Boolean>(false)
 
+    @SuppressLint("CheckResult")
     fun login() {
         Logger.t(TAG.LOGIN).d("click login id: ${id.value}, pw: ${pw.value}")
         val memberDto = MemberDto(-1, "", id.value, pw.value)
@@ -34,7 +36,7 @@ class LoginViewModel(
                 Logger.t(TAG.LOGIN).d("error -> ${thowable.localizedMessage}")
             }, { // complete
 
-            }, {  subscription ->
+            }, { subscription ->
                 subscription.request(Long.MAX_VALUE)
             })
     }

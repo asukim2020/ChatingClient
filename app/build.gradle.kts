@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -42,21 +43,26 @@ dependencies {
     implementation ("io.reactivex.rxjava3:rxandroid:3.0.0")
     implementation ("io.reactivex.rxjava3:rxjava:3.0.8")
     implementation ("com.jakewharton.rxbinding4:rxbinding:4.0.0")
-    implementation("io.reactivex.rxjava2:rxandroid:2.0.0-RC1")
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
+
+    val dagger = "2.44"
+    implementation("com.google.dagger:hilt-android:$dagger")
+    kapt("com.google.dagger:hilt-compiler:$dagger")
 
     // room
     val room = "2.5.0"
-    annotationProcessor("androidx.room:room-compiler:$room")
+    kapt("androidx.room:room-compiler:$room")
     implementation("androidx.room:room-runtime:$room")
     implementation("androidx.room:room-ktx:$room")
     implementation("androidx.room:room-rxjava3:$room")
     implementation("androidx.room:room-paging:$room")
 
     val viewModelActivity = "1.7.1"
-    val viewModelFragment = "1.5.7"
     implementation("androidx.activity:activity-ktx:$viewModelActivity")
+    val viewModelFragment = "1.5.7"
     implementation("androidx.fragment:fragment-ktx:$viewModelFragment")
-    annotationProcessor("com.android.databinding:compiler:3.1.4")
+    val databinding = "3.1.4"
+    kapt("com.android.databinding:compiler:$databinding")
 
     val navigationVersion = "2.5.0"
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")

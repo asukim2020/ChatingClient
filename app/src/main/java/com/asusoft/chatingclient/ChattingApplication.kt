@@ -1,5 +1,6 @@
 package com.asusoft.chatingclient
 
+import android.app.Application
 import android.content.res.Resources
 import android.widget.Toast
 import androidx.annotation.StringRes
@@ -10,19 +11,20 @@ import com.orhanobut.logger.DiskLogAdapter
 import com.orhanobut.logger.FormatStrategy
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
+import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
-class Application : android.app.Application() {
+@HiltAndroidApp
+class ChattingApplication : Application() {
 
     init {
         instance = this
     }
 
     companion object {
-        private lateinit var instance: Application
+        private lateinit var instance: ChattingApplication
 
         fun showToast(@StringRes stringId: Int, vararg args: Any?) {
             instance.showToast(stringId, args)
